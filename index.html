@@ -1,26 +1,319 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ben Kimim</title>
-  <style>
-    body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
-    h1 { color: #4CAF50; }
-    p { font-size: 18px; }
-    img { border-radius: 50%; width: 150px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ben Kimim | Portfolyo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Temel Ayarlar ve Renk Paleti */
+        :root {
+            --bg-color: #0f172a; /* Derin Gece Mavisi */
+            --text-color: #f8fafc;
+            --accent-color: #8b5cf6; /* Canlı Mor */
+            --accent-hover: #a78bfa;
+            --card-bg: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigasyon Barı */
+        nav {
+            position: fixed;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Genel Bölüm Ayarları */
+        section {
+            min-height: 100vh;
+            padding: 100px 10vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h2.section-title {
+            font-size: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        h2.section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Giriş (Hero) Bölümü */
+        #home {
+            align-items: flex-start;
+        }
+
+        .hero-text h1 {
+            font-size: 60px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 span {
+            color: var(--accent-color);
+            text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            color: #cbd5e1;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(139, 92, 246, 0.4);
+        }
+
+        /* Hakkımda Bölümü */
+        #about .about-content {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Çalışmalarım Bölümü */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            background: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+        }
+
+        .card-info {
+            padding: 25px;
+        }
+
+        .card-info h3 {
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        /* İletişim Bölümü */
+        #contact {
+            text-align: center;
+            align-items: center;
+        }
+
+        .contact-box {
+            background: var(--card-bg);
+            padding: 50px;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 100%;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .contact-box p {
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        /* Animasyon Sınıfları (JavaScript ile tetiklenir) */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobil Uyumluluk */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Mobilde menüyü gizle (basitlik için) */
+            .hero-text h1 { font-size: 40px; }
+            section { padding: 80px 5vw; }
+        }
+    </style>
 </head>
 <body>
-  <img src="https://via.placeholder.com/150" alt="Profil Fotoğrafı">
-  <h1>Merhaba!</h1>
-  <p>Merhaba! Ben Berat Çetin, dijital dünyada kodun peşinden giden bir maceraperestim. 🌌 Her yeni satır, her yeni proje benim için küçük bir keşif gezisi; bazen bir bug, bazen bir fikir patlamasıyla karşılaşırım, ama her zaman öğrenmeye ve yaratmaya açığım.
 
-Web sayfaları, mobil uygulamalar ve yapay zekâ destekli projeler üzerinde çalışıyorum. Kod benim dilim, ama fikirlerim sınır tanımıyor. Her proje, hem bir öğrenme hem de bir ifade biçimi: minimalist tasarımın sade estetiğiyle, yaratıcılığın sınırsızlığını birleştirmeyi seviyorum. 🚀
+    <nav>
+        <a href="#home" class="logo">Port<span>folyo.</span></a>
+        <div class="nav-links">
+            <a href="#home">Ana Sayfa</a>
+            <a href="#about">Hakkımda</a>
+            <a href="#works">Çalışmalarım</a>
+            <a href="#contact">İletişim</a>
+        </div>
+    </nav>
 
-Benim için önemli olan sadece yapmak değil, aynı zamanda deneyimlemek ve etkileşim yaratmak. Kullanıcıyla buluşan bir dokunuş, bir gülümseme, ya da bir “aha!” anı… İşte bu, yaptığım her şeye değer katıyor.
+    <section id="home">
+        <div class="hero-text fade-in">
+            <h1>Merhaba, Ben <br><span>[Adın Soyadın]</span></h1>
+            <p>Modern teknolojiler ve yaratıcı tasarımlarla dijital dünyada iz bırakan işler üretiyorum. Fikirleri gerçeğe dönüştürmeyi seviyorum.</p>
+            <a href="#works" class="btn">Çalışmalarımı Gör</a>
+        </div>
+    </section>
 
-Dijital dünyadaki yolculuğuma sen de göz atmak istersen ya da sadece merhaba demek istersen: beratcetin@gmail.com
- ✉️. Her mesaj bir yeni keşif başlatabilir. 🌟</p>
+    <section id="about">
+        <h2 class="section-title fade-in">Hakkımda</h2>
+        <div class="about-content fade-in">
+            <p>Buraya kendi hikayeni yazabilirsin. Hangi alanlarda uzmansın? Seni diğerlerinden ayıran özelliklerin neler? Mesleğine olan tutkunu ve tecrübelerini bu alanda modern bir dille anlatabilirsin. Temiz kod yazmayı, yenilikçi tasarımlar oluşturmayı ve sürekli öğrenmeyi ilke edinmiş bir profesyonelim.</p>
+            <br>
+            <p>Yeteneklerim: HTML, CSS, JavaScript, UI/UX Tasarım, Problem Çözme...</p>
+        </div>
+    </section>
+
+    <section id="works">
+        <h2 class="section-title fade-in">Çalışmalarım</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-card fade-in">
+                <div class="card-img">[Proje Görseli Gelecek]</div>
+                <div class="card-info">
+                    <h3>E-Ticaret Platformu</h3>
+                    <p>Modern bir e-ticaret sitesi arayüzü ve kullanıcı deneyimi tasarımı.</p>
+                </div>
+            </div>
+            <div class="portfolio-card fade-in">
+                <div class="card-img">[Proje Görseli Gelecek]</div>
+                <div class="card-info">
+                    <h3>Mobil Uygulama Arayüzü</h3>
+                    <p>Kullanıcı dostu, karanlık mod destekli mobil uygulama arayüzü çalışması.</p>
+                </div>
+            </div>
+            <div class="portfolio-card fade-in">
+                <div class="card-img">[Proje Görseli Gelecek]</div>
+                <div class="card-info">
+                    <h3>Kurumsal Web Sitesi</h3>
+                    <p>Kurumsal bir marka için hızlı ve SEO uyumlu kurumsal kimlik web projesi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title fade-in">İletişim</h2>
+        <div class="contact-box fade-in">
+            <p>Yeni bir projeye başlamak veya sadece merhaba demek ister misin? Gelen kutum her zaman açık, sana en kısa sürede dönüş yapacağım!</p>
+            <a href="mailto:seninepostan@gmail.com?subject=Portfolyo Üzerinden Gelen Mesaj" class="btn">Bana E-Posta Gönder</a>
+        </div>
+    </section>
+
+    <script>
+        // Sayfa kaydırıldıkça elementlerin yumuşakça görünmesini sağlayan sistem
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Bir kere göründükten sonra takibi bırak
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        // 'fade-in' sınıfına sahip tüm elementleri bul ve gözlemle
+        document.querySelectorAll('.fade-in').forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
 </body>
 </html>
