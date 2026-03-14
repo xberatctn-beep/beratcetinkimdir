@@ -124,4 +124,115 @@
         .blog-card:hover {
             transform: translateY(-10px);
             border-color: var(--accent-color);
-            box-shadow: 0 10px 30px rgba(0,0,0,0
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .blog-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .category-tag {
+            font-size: 12px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .blog-content h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .blog-content p {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .blog-footer {
+            margin-top: auto;
+            font-size: 12px;
+            color: #64748b;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Mobil Uyumluluk */
+        @media (max-width: 768px) {
+            .nav-right { gap: 10px; }
+            .doviz-box { display: none; } /* Mobilde çok kalabalık olmaması için dövizi gizledik */
+            .logo { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Cetin<span>.Digital</span></a>
+        
+        <div class="nav-right">
+            <div class="doviz-box" id="usd-rate">USD: --.--₺</div>
+            
+            <div class="nav-links">
+                <a href="index.html">Ana Sayfa</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="index.html#contact">İletişim</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="blog-container">
+        <header class="blog-header">
+            <h1>Dijital Notlarım</h1>
+            <p>Yazılım, tasarım ve yapay zeka üzerine düşüncelerim.</p>
+        </header>
+
+        <div class="blog-grid">
+            
+            <article class="blog-card" onclick="location.href='doviz-yazisi.html'">
+                <img src="websiteai.png" alt="Döviz Bandı" class="blog-img">
+                <div class="blog-content">
+                    <span class="category-tag">Teknoloji</span>
+                    <h3>Web Siteme Nasıl Canlı Döviz Bandı Ekledim?</h3>
+                    <p>JavaScript ve API kullanarak sitenize dinamik finansal veriler eklemenin en hızlı yolu...</p>
+                    <div class="blog-footer">
+                        <span>14 Mart 2026</span>
+                        <span>4 dk okuma</span>
+                    </div>
+                </div>
+            </article>
+
+            </div>
+    </main>
+
+    <script>
+        // --- CANLI DÖVİZ VERİSİ ---
+        async function fetchCurrency() {
+            try {
+                const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+                const data = await response.json();
+                const tryRate = data.rates.TRY;
+                document.getElementById('usd-rate').innerText = `USD: ${tryRate.toFixed(2)}₺`;
+            } catch (error) {
+                console.error("Döviz verisi çekilemedi.");
+                document.getElementById('usd-rate').innerText = "USD: --.--₺";
+            }
+        }
+
+        // Sayfa yüklendiğinde dövizi çek
+        fetchCurrency();
+        // Her 5 dakikada bir güncelle
+        setInterval(fetchCurrency, 300000);
+    </script>
+
+</body>
+</html>
