@@ -1,66 +1,127 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berat Çetin | Portfolyo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> </head>
-<body>
-    <nav>
-        <a href="index.html" class="logo">Cetin<span>.Digital</span></a>
-        <div class="nav-right">
-            <div class="doviz-box" id="usd-rate">Yükleniyor...</div>
-            <div class="nav-links">
-                <a href="index.html" class="active">Ana Sayfa</a>
-                <a href="blog.html">Blog</a>
-                <a href="#about">Hakkımda</a>
-            </div>
-        </div>
-    </nav>
+    <title>Yazılım Geliştirici | Portföy</title>
+    <meta name="description" content="Profesyonel Yazılım Geliştirici Portföyü. Modern teknolojilerle geliştirilmiş projeler ve hakkımda bilgiler.">
+    <meta name="keywords" content="Yazılım, Developer, Portföy, Full Stack, Web Geliştirme">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0b0014; }
+        .neon-text { text-shadow: 0 0 10px #a020f0, 0 0 20px #a020f0; }
+        .neon-border { border: 1px solid #a020f0; box-shadow: 0 0 15px rgba(160, 32, 240, 0.4); }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); }
+        .neon-button:hover { box-shadow: 0 0 20px #a020f0; transition: 0.3s ease; }
+    </style>
+</head>
+<body class="text-gray-200 leading-relaxed overflow-x-hidden">
 
-    <section id="home">
-        <div class="flex-container">
-            <div class="text-side fade-in">
-                <h1>Merhaba, Ben <br><span>Berat Çetin</span></h1>
-                <p>Modern teknolojilerle dijital çözümler üretiyorum.</p>
+    <header class="fixed top-0 w-full z-50 glass border-b border-purple-900/50">
+        <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-tighter text-white">
+                <span class="text-purple-500 underline underline-offset-4 decoration-2">YAZILIMCI</span>.DEV
             </div>
-            <div class="image-side fade-in">
-                <img src="beratcetinprofil.png" alt="Profil">
+            <ul class="hidden md:flex space-x-8 font-medium">
+                <li><a href="#hakkimda" class="hover:text-purple-400 transition">Hakkımda</a></li>
+                <li><a href="#calismalarim" class="hover:text-purple-400 transition">Çalışmalarım</a></li>
+                <li><a href="#iletisim" class="hover:text-purple-400 transition">İletişim</a></li>
+            </ul>
+            <a href="#iletisim" class="hidden md:block px-5 py-2 neon-border rounded-full text-sm font-semibold neon-button">Bana Ulaşın</a>
+        </nav>
+    </header>
+
+    <section class="min-h-screen flex items-center justify-center pt-20 px-6">
+        <div class="text-center">
+            <h2 class="text-purple-500 font-semibold tracking-widest uppercase text-sm mb-4">Hoş Geldiniz</h2>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6">
+                Dijital Dünyayı <br> <span class="neon-text text-purple-400">Kodla İnşa Ediyorum</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-gray-400 text-lg mb-10">
+                Full-stack teknolojiler ve modern yazılım mimarileri ile yüksek performanslı, SEO uyumlu ve kullanıcı odaklı çözümler üretiyorum.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#calismalarim" class="px-8 py-3 bg-purple-600 rounded-lg font-bold text-white hover:bg-purple-700 transition">Projeleri Gör</a>
+                <a href="#hakkimda" class="px-8 py-3 border border-purple-500 rounded-lg font-bold hover:bg-purple-500/10 transition">Daha Fazla Bilgi</a>
             </div>
         </div>
     </section>
 
-    <section id="about" class="fade-in">
-        <h2>Yeteneklerim</h2>
-        <div class="skills-container">
-            <div class="skill-item">
-                <div style="display:flex; justify-content:space-between"><span>AI & Yapay Zeka</span><span>60%</span></div>
-                <div class="bar"><div class="progress" data-done="60"></div></div>
-            </div>
-            <div class="skill-item">
-                <div style="display:flex; justify-content:space-between"><span>Web Geliştirme</span><span>75%</span></div>
-                <div class="bar"><div class="progress" data-done="75"></div></div>
+    <section id="hakkimda" class="py-24 px-6 bg-[#0f001a]">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8 border-b-2 border-purple-500 inline-block pb-2">Hakkımda</h2>
+            <p class="text-gray-300 text-lg mb-8">
+                Yazılım dünyasına olan tutkum, karmaşık problemleri basit ve etkili çözümlere dönüştürme isteğimden geliyor. Modern web teknolojileri (React, Node.js, Python) üzerinde uzmanlaşarak markalar için ölçeklenebilir ürünler geliştiriyorum.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+                <div class="p-4 glass rounded-xl border border-white/5">JavaScript</div>
+                <div class="p-4 glass rounded-xl border border-white/5 text-purple-400 font-bold">React.js</div>
+                <div class="p-4 glass rounded-xl border border-white/5">Tailwind CSS</div>
+                <div class="p-4 glass rounded-xl border border-white/5 text-purple-400 font-bold">Node.js</div>
             </div>
         </div>
     </section>
 
-    <script>
-        // Döviz Verisi Çekme
-        fetch('https://api.exchangerate-api.com/v4/latest/USD').then(res => res.json()).then(data => {
-            document.getElementById('usd-rate').innerText = `USD: ${data.rates.TRY.toFixed(2)}₺`;
-        });
+    <section id="calismalarim" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h2 class="text-3xl font-bold">Son Çalışmalarım</h2>
+                <p class="text-gray-400 mt-2">En güncel projelerimden bazıları.</p>
+            </div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="group relative glass rounded-2xl overflow-hidden border border-white/5 hover:border-purple-500 transition duration-500">
+                <div class="h-48 bg-purple-900/20 flex items-center justify-center">
+                    <span class="text-purple-500 opacity-50 text-4xl font-bold">PROJE 1</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 uppercase">E-Ticaret Platformu</h3>
+                    <p class="text-gray-400 mb-4 text-sm">Next.js ve Stripe altyapısı ile hazırlanmış tam kapsamlı satış sitesi.</p>
+                    <div class="flex gap-2">
+                        <span class="px-3 py-1 bg-white/5 rounded text-xs">Next.js</span>
+                        <span class="px-3 py-1 bg-white/5 rounded text-xs">Tailwind</span>
+                    </div>
+                </div>
+            </div>
 
-        // Görünme Animasyonu ve Barlar
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if(e.isIntersecting) {
-                    e.target.classList.add('visible');
-                    e.target.querySelectorAll('.progress').forEach(b => b.style.width = b.getAttribute('data-done') + '%');
-                }
-            });
-        });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-    </script>
+            <div class="group relative glass rounded-2xl overflow-hidden border border-white/5 hover:border-purple-500 transition duration-500">
+                <div class="h-48 bg-purple-900/20 flex items-center justify-center">
+                    <span class="text-purple-500 opacity-50 text-4xl font-bold">PROJE 2</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 uppercase">AI İçerik Paneli</h3>
+                    <p class="text-gray-400 mb-4 text-sm">Yapay zeka modellerini kullanarak otomatik içerik üreten dashboard uygulaması.</p>
+                    <div class="flex gap-2">
+                        <span class="px-3 py-1 bg-white/5 rounded text-xs">Python</span>
+                        <span class="px-3 py-1 bg-white/5 rounded text-xs">API</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="iletisim" class="py-24 px-6 bg-[#0f001a]">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">İletişime Geçin</h2>
+                <p class="text-gray-400">Yeni bir proje veya iş birliği için mesaj atın.</p>
+            </div>
+            <form class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" placeholder="Adınız" class="w-full p-4 rounded-lg bg-white/5 border border-white/10 focus:outline-none focus:border-purple-500 transition">
+                    <input type="email" placeholder="E-Posta Adresiniz" class="w-full p-4 rounded-lg bg-white/5 border border-white/10 focus:outline-none focus:border-purple-500 transition">
+                </div>
+                <textarea rows="5" placeholder="Mesajınız" class="w-full p-4 rounded-lg bg-white/5 border border-white/10 focus:outline-none focus:border-purple-500 transition"></textarea>
+                <button type="submit" class="w-full py-4 bg-purple-600 rounded-lg font-bold hover:bg-purple-700 transition neon-button">Gönder</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-10 border-t border-white/5 text-center text-gray-500 text-sm">
+        <p>&copy; 2024 Yazılımcı Portföy. Tüm Hakları Saklıdır.</p>
+    </footer>
+
 </body>
 </html>
