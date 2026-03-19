@@ -13,6 +13,7 @@
         .neon-text { text-shadow: 0 0 10px #a020f0, 0 0 20px #a020f0; }
         .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); }
         .dark .glass { background: rgba(0, 0, 0, 0.2); border-color: rgba(160, 32, 240, 0.2); }
+        .policy-item { border-left: 2px solid #a020f0; padding-left: 1rem; margin-bottom: 1.5rem; }
     </style>
 </head>
 <body class="bg-white text-gray-900 dark:bg-[#0b0014] dark:text-gray-200 leading-relaxed overflow-x-hidden">
@@ -52,31 +53,63 @@
         
         <div class="space-y-12">
             <section class="glass p-8 rounded-2xl border border-purple-900/20 shadow-xl">
-                <h2 class="text-2xl font-bold text-purple-500 mb-6 uppercase tracking-widest">Privacy Policy</h2>
-                <div class="space-y-4 text-sm md:text-base leading-relaxed">
-                    <p><strong>(TR)</strong> Berat Çetin tarafından geliştirilen uygulamalar kullanıcı gizliliğine önem verir. </p>
-                    <h3>1. Toplanan Veriler</h3>
-                    <hr class="border-purple-900/20">
-                    <p><strong>(EN)</strong> Applications developed by Berat Çetin do not collect, store, or share any personal user data. We respect your privacy and follow Google Play's standard privacy guidelines.</p>
-                    <p class="text-purple-500/60 font-mono mt-4">Contact: berattcetin.dev@gmail.com</p>
+                <h2 class="text-2xl font-bold text-purple-500 mb-6 uppercase tracking-widest flex items-center gap-3">
+                    <span>🔐</span> Privacy Policy
+                </h2>
+                <div class="space-y-6 text-sm md:text-base leading-relaxed">
+                    <p class="italic text-gray-500 dark:text-gray-400">Berat Çetin tarafından geliştirilen uygulamalar kullanıcı gizliliğine önem verir.</p>
+
+                    <div class="policy-item">
+                        <h3 class="font-bold text-lg mb-2">1. Toplanan Veriler (Collected Data)</h3>
+                        <p class="mb-2">Uygulamalarımız Google AdMob ve Google Play Billing hizmetlerini kullanabilir. Bu servisler cihaz bilgilerini, reklam kimliğini (Advertising ID) ve kullanım verilerini toplayabilir. Bu veriler tarafımızca değil, üçüncü taraf sağlayıcılarca işlenir.</p>
+                        <p class="text-xs opacity-60 uppercase tracking-tighter">Applications use Google AdMob and Play Billing. These services may collect device info and Ad IDs via third-party providers.</p>
+                    </div>
+
+                    <div class="policy-item">
+                        <h3 class="font-bold text-lg mb-2">2. Reklamlar & Satın Alma (Ads & IAP)</h3>
+                        <p>Kullanıcılar reklam kişiselleştirmeyi cihaz ayarlarından kapatabilir. Tüm satın alma işlemleri Google Play'in güvenli altyapısı üzerinden yapılır; ödeme bilgileriniz geliştirici tarafından görülmez.</p>
+                    </div>
+
+                    <div class="policy-item">
+                        <h3 class="font-bold text-lg mb-2">3. Veri Paylaşımı & Çocukların Gizliliği</h3>
+                        <p>Verileriniz satılmaz veya kiralanmaz. Uygulamalarımız 13 yaş altı çocukları hedeflememektedir ve bilerek çocuklardan veri toplanmaz.</p>
+                    </div>
+
+                    <div class="pt-6 border-t border-purple-900/20">
+                        <p class="text-purple-500 font-mono">İletişim: berattcetin.dev@gmail.com</p>
+                    </div>
                 </div>
             </section>
 
             <section class="glass p-8 rounded-2xl border border-purple-900/20 shadow-xl">
-                <h2 class="text-2xl font-bold text-purple-500 mb-6 uppercase tracking-widest">Terms of Service</h2>
-                <div class="space-y-4 text-sm md:text-base leading-relaxed">
-                    <p class="flex items-center gap-3">
-                        <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
-                        1. Bu yazılımların tüm hakları saklıdır.
-                    </p>
-                    <p class="flex items-center gap-3">
-                        <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
-                        2. Yazılımların izinsiz kopyalanması veya tersine mühendislik yapılması yasaktır.
-                    </p>
-                    <p class="flex items-center gap-3">
-                        <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
-                        3. All rights reserved. Unauthorized copying or redistribution is strictly prohibited.
-                    </p>
+                <h2 class="text-2xl font-bold text-purple-500 mb-6 uppercase tracking-widest flex items-center gap-3">
+                    <span>📜</span> Terms of Service
+                </h2>
+                <div class="space-y-6 text-sm md:text-base leading-relaxed">
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="p-4 bg-purple-500/5 rounded-xl border border-purple-500/10">
+                            <h3 class="font-bold mb-2">Genel Şartlar</h3>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start gap-2">✔ Uygulamayı kullananlar bu şartları kabul eder.</li>
+                                <li class="flex items-start gap-2">✔ Sadece kişisel kullanım içindir.</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-red-500/5 rounded-xl border border-red-500/10">
+                            <h3 class="font-bold mb-2 text-red-400">Yasaklar (Prohibited)</h3>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start gap-2">❌ Kopyalamak veya dağıtmak.</li>
+                                <li class="flex items-start gap-2">❌ Tersine mühendislik yapmak.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="policy-item">
+                        <h3 class="font-bold text-lg mb-2">Sorumluluk Reddi (Disclaimer)</h3>
+                        <p>Uygulama "olduğu gibi" sunulur. Herhangi bir veri kaybı veya zarardan geliştirici sorumlu tutulamaz. Satın alınan içerikler Google hesabınıza bağlıdır.</p>
+                    </div>
+
+                    <p class="text-xs text-gray-500 italic">Bu politikalar ve şartlar zaman zaman güncellenebilir ve güncellemeler bu sayfa üzerinden yayınlanır.</p>
                 </div>
             </section>
         </div>
@@ -87,7 +120,6 @@
     </footer>
 
     <script>
-        // Tema Yönetimi (Hafıza Özelliği)
         const themeToggleBtn = document.getElementById('theme-toggle');
 
         function applyTheme() {
@@ -98,7 +130,6 @@
             }
         }
 
-        // Sayfa yüklendiğinde temayı uygula
         applyTheme();
 
         themeToggleBtn.addEventListener('click', () => {
@@ -107,7 +138,6 @@
             localStorage.setItem('color-theme', isDark ? 'dark' : 'light');
         });
 
-        // Mobil Menü
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
